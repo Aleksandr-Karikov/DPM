@@ -1,0 +1,20 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 3 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore  /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\Aleksandr\source\repos\Task1\TestProject\bin\Release\net5.0\06b078cc-9555-4540-b2bc-53bd2a003d88
+// command took 1,79s and exited with 0
+// start dotnet build -c Release  --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\Aleksandr\source\repos\Task1\TestProject\bin\Release\net5.0\06b078cc-9555-4540-b2bc-53bd2a003d88
+// command took 3,09s and exited with 0
+// ***** Done, took 00:00:04 (4.99 sec)   *****
+// Found 3 benchmarks:
+//   Benchmark.MultiThread: DefaultJob
+//   Benchmark.Sequential: DefaultJob
+//   Benchmark.Parallel: DefaultJob
+
+// **************************
+// Benchmark: Benchmark.MultiThread: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "06b078cc-9555-4540-b2bc-53bd2a003d88.dll" --benchmarkName "TestProject.Benchmark.MultiThread" --job "Default" --benchmarkId 0 in C:\Users\Aleksandr\source\repos\Task1\TestProject\bin\Release\net5.0\06b078cc-9555-4540-b2bc-53bd2a003d88\bin\Release\net5.0
+// BeforeAnythingElse

@@ -1,0 +1,70 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 3 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore  /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\Aleksandr\source\repos\Task1\TestProject\bin\Release\net5.0\d2f54803-636d-482e-aa3c-1d9572b10918
+// command took 1,8s and exited with 0
+// start dotnet build -c Release  --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\Aleksandr\source\repos\Task1\TestProject\bin\Release\net5.0\d2f54803-636d-482e-aa3c-1d9572b10918
+// command took 3,05s and exited with 0
+// ***** Done, took 00:00:04 (4.96 sec)   *****
+// Found 3 benchmarks:
+//   Benchmark.MultiThread: DefaultJob
+//   Benchmark.Sequential: DefaultJob
+//   Benchmark.Parallel: DefaultJob
+
+// **************************
+// Benchmark: Benchmark.MultiThread: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "d2f54803-636d-482e-aa3c-1d9572b10918.dll" --benchmarkName "TestProject.Benchmark.MultiThread" --job "Default" --benchmarkId 0 in C:\Users\Aleksandr\source\repos\Task1\TestProject\bin\Release\net5.0\d2f54803-636d-482e-aa3c-1d9572b10918\bin\Release\net5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 5.0.2 (5.0.220.61120), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 293800.00 ns, 293.8000 us/op
+WorkloadJitting  1: 1 op, 3607600.00 ns, 3.6076 ms/op
+
+OverheadJitting  2: 16 op, 223300.00 ns, 13.9563 us/op
+WorkloadJitting  2: 16 op, 340600.00 ns, 21.2875 us/op
+
+WorkloadPilot    1: 16 op, 117600.00 ns, 7.3500 us/op
+WorkloadPilot    2: 32 op, 201500.00 ns, 6.2969 us/op
+WorkloadPilot    3: 64 op, 437600.00 ns, 6.8375 us/op
+WorkloadPilot    4: 128 op, 867900.00 ns, 6.7805 us/op
+WorkloadPilot    5: 256 op, 1734200.00 ns, 6.7742 us/op
+WorkloadPilot    6: 512 op, 3636500.00 ns, 7.1025 us/op
+WorkloadPilot    7: 1024 op, 7020800.00 ns, 6.8563 us/op
+WorkloadPilot    8: 2048 op, 14230100.00 ns, 6.9483 us/op
+WorkloadPilot    9: 4096 op, 28219300.00 ns, 6.8895 us/op
+WorkloadPilot   10: 8192 op, 55864500.00 ns, 6.8194 us/op
+WorkloadPilot   11: 16384 op, 108857100.00 ns, 6.6441 us/op
+WorkloadPilot   12: 32768 op, 220856000.00 ns, 6.7400 us/op
+WorkloadPilot   13: 65536 op, 443655800.00 ns, 6.7697 us/op
+WorkloadPilot   14: 131072 op, 882687800.00 ns, 6.7344 us/op
+
+OverheadWarmup   1: 131072 op, 320100.00 ns, 2.4422 ns/op
+OverheadWarmup   2: 131072 op, 320900.00 ns, 2.4483 ns/op
+OverheadWarmup   3: 131072 op, 320800.00 ns, 2.4475 ns/op
+OverheadWarmup   4: 131072 op, 319200.00 ns, 2.4353 ns/op
+OverheadWarmup   5: 131072 op, 327700.00 ns, 2.5002 ns/op
+OverheadWarmup   6: 131072 op, 319400.00 ns, 2.4368 ns/op
+
+OverheadActual   1: 131072 op, 319900.00 ns, 2.4406 ns/op
+OverheadActual   2: 131072 op, 326600.00 ns, 2.4918 ns/op
+OverheadActual   3: 131072 op, 321200.00 ns, 2.4506 ns/op
+OverheadActual   4: 131072 op, 325500.00 ns, 2.4834 ns/op
+OverheadActual   5: 131072 op, 319700.00 ns, 2.4391 ns/op
+OverheadActual   6: 131072 op, 321000.00 ns, 2.4490 ns/op
+OverheadActual   7: 131072 op, 319200.00 ns, 2.4353 ns/op
+OverheadActual   8: 131072 op, 347100.00 ns, 2.6482 ns/op
+OverheadActual   9: 131072 op, 320700.00 ns, 2.4467 ns/op
+OverheadActual  10: 131072 op, 319300.00 ns, 2.4361 ns/op
+OverheadActual  11: 131072 op, 319200.00 ns, 2.4353 ns/op
+OverheadActual  12: 131072 op, 319200.00 ns, 2.4353 ns/op
+OverheadActual  13: 131072 op, 319300.00 ns, 2.4361 ns/op
+OverheadActual  14: 131072 op, 319200.00 ns, 2.4353 ns/op
+OverheadActual  15: 131072 op, 320600.00 ns, 2.4460 ns/op
+
