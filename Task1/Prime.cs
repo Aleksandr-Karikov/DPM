@@ -33,35 +33,52 @@ namespace Task1
             return true;
         }
 
+        private static bool IsThreadsOnline(Thread[] threads)
+        {
+            foreach (Thread thread in threads)
+            {
+                if (thread.ThreadState == ThreadState.Running) return true;
+            }
+            return false;
+        }
 
-
+        private static void DisplayArray(int[] array)
+        {
+            Console.WriteLine("lenth " + array.Length);
+            foreach (int i in array)
+            {
+                Console.Write(i + " ");
+            }
+            Console.WriteLine();
+        }
         public static bool HasNonPrimeNumberMultiThread(int[] array, byte threadCount = 1)
         {
             if (threadCount < 1) throw new Exception("ThreadCount can't be less than 1");
             if (threadCount == 1) return HasNonPrimeNumberSequential(array);
-            bool rezult = false;
-            //Thread[] threads = new Thread[threadCount];
-            //for (int i = 0; i < threadCount; i++)
-            //{
-            //    threads[i] = new Thread((num) =>
-            //    {
-            //        if (!IsPrime((int)num)) rezult = true;
-            //        rezult = false;
-            //    });
-            //}
 
-            for (int i = 0; i < array.Length; i ++)
+            bool result = false;
+            var step = array.Length / threadCount;
+            var remainder = array.Length % threadCount;
+
+            Thread[] threads = new Thread[threadCount];
+            threads[0] = new Thread(() => {
+                if (HasNonPrimeNumberSequential(Helper.SubArray(array, 0, step + remainder)))  result = true;
+            });
+            threads[0].Start();
+
+            for (int i = 1; i < threadCount; i++)
             {
-                ThreadPool.QueueUserWorkItem((stateInfo) =>
-                {
-                    if (!IsPrime(i)) rezult = true;
+                var newArray = Helper.SubArray(array, i * step + remainder, step);
+                threads[i] = new Thread(() => {
+                    if (HasNonPrimeNumberSequential(newArray)) result = true;
                 });
-                if (rezult) return true;
+                threads[i].Start();
             }
-
-
-            if (rezult) return true;
-            return false;
+            while (IsThreadsOnline(threads))
+            {
+                
+            }
+            return result;
         }
         public static bool HasNonPrimeNumberParallel(int[] array)
         {
