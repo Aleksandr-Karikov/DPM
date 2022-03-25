@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B7RIXP427OxPP84fkLO2QEkAYkkz/ECtTpUxXxxjNtuTNfu8SLblMNiKanW70wrtGdZ4aW6NfkD5Tl5HeQI6tA==",
+  "dgSpecHash": "tyBdOwg64c+yhmZv68Z1buhV+olE5c5xoXRybB00rrKfHuoBdMem1oXymYNvakPHSF2iIsakdbZIspG7B25fZA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Aleksandr\\source\\repos\\Task1\\TestProject\\TestProject.csproj",
+  "projectFilePath": "C:\\Users\\Aleksandr\\source\\repos\\DPM\\TestProject\\TestProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Aleksandr\\.nuget\\packages\\benchmarkdotnet\\0.13.1\\benchmarkdotnet.0.13.1.nupkg.sha512",
     "C:\\Users\\Aleksandr\\.nuget\\packages\\benchmarkdotnet.annotations\\0.13.1\\benchmarkdotnet.annotations.0.13.1.nupkg.sha512",
@@ -99,7 +99,10 @@
     "C:\\Users\\Aleksandr\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Aleksandr\\.nuget\\packages\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512",
     "C:\\Users\\Aleksandr\\.nuget\\packages\\system.xml.xpath.xdocument\\4.3.0\\system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Aleksandr\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+    "C:\\Users\\Aleksandr\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512",
+    "C:\\Users\\Aleksandr\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Aleksandr\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Aleksandr\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,6 +1,7 @@
 ﻿using BenchmarkDotNet.Running;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Task1;
 
 namespace TestProject
@@ -9,10 +10,10 @@ namespace TestProject
     {
         private static List<int[]> moks = new List<int[]>()
         {
-            //new int[] { 1, 2,3,4,5,6,7,8,9},
-            //new int[] { 0,1,4,6},
-            //new int[] { -1,0,1,4,6},
-            //new int[] {2,3,5,7,11,13},
+            new int[] { 1, 2,3,4,5,6,7,8,9},
+            new int[] { 0,1,4,6},
+            new int[] { -1,0,1,4,6},
+            new int[] {2,3,5,7,11,13},
             new int[] { 27644437, 27644437, 27644437, 27644437, 27644437, 27644437,
                 27644437, 27644437, 27644437, 27644437, 27644437, 27644437, 27644437,
                 27644437, 27644437, 27644437, 27644437, 27644437, 27644437, 27644437,
@@ -22,90 +23,42 @@ namespace TestProject
                 27644437, 27644437, 27644437, 27644437, 27644437, 27644437, 27644437, 27644437, 
                 27644437, 27644437, 27644437, 27644437, 1 },
         };
-
-        static void Main(string[] args)
+        private static async Task MainAsync()
         {
-            //BenchmarkRunner.Run<Benchmark>();
+            for (int i = 2; i < 20; i++)
+            {
+                var start1 = DateTime.Now;
+                foreach (var mok in moks)
+                {
+                    Console.WriteLine(await Prime.HasNonPrimeNumberMultiThread(mok, (byte)i)); 
+
+                }
+                var end1 = DateTime.Now;
+                Console.WriteLine($"{i} потоков " + (end1 - start1));
+            }
             var start = DateTime.Now;
             foreach (var mok in moks)
             {
-                Prime.HasNonPrimeNumberMultiThread(mok, 4);
-               
+                Console.WriteLine(Prime.HasNonPrimeNumberParallel(mok));
+                
+
             }
             var end = DateTime.Now;
-            Console.WriteLine((end - start));
-            start = DateTime.Now;
-            foreach (var mok in moks)
-            {
-                Prime.HasNonPrimeNumberMultiThread(mok, 8);
-            }
-            end = DateTime.Now;
-            Console.WriteLine((end - start));
-            start = DateTime.Now;
-            foreach (var mok in moks)
-            {
-                Prime.HasNonPrimeNumberMultiThread(mok, 12);
-
-            }
-            end = DateTime.Now;
-            Console.WriteLine((end - start));
+            Console.WriteLine("paralel " + (end - start));
 
             start = DateTime.Now;
             foreach (var mok in moks)
             {
-                Prime.HasNonPrimeNumberMultiThread(mok, 16);
-
+                
+                Console.WriteLine(Prime.HasNonPrimeNumberSequential(mok));
             }
             end = DateTime.Now;
-            Console.WriteLine((end - start));
-            start = DateTime.Now;
-            foreach (var mok in moks)
-            {
-                Prime.HasNonPrimeNumberMultiThread(mok, 20);
-
-            }
-            end = DateTime.Now;
-            Console.WriteLine((end - start));
-            start = DateTime.Now;
-            foreach (var mok in moks)
-            {
-                Prime.HasNonPrimeNumberMultiThread(mok, 24);
-
-            }
-            end = DateTime.Now;
-            Console.WriteLine((end - start));
-            start = DateTime.Now;
-            foreach (var mok in moks)
-            {
-                Prime.HasNonPrimeNumberMultiThread(mok, 28);
-
-            }
-            end = DateTime.Now;
-            Console.WriteLine((end - start));
-            start = DateTime.Now;
-            foreach (var mok in moks)
-            {
-                Prime.HasNonPrimeNumberMultiThread(mok, 32);
-
-            }
-            end = DateTime.Now;
-            Console.WriteLine((end - start));
-            start = DateTime.Now;
-            foreach (var mok in moks)
-            {
-                Prime.HasNonPrimeNumberMultiThread(mok, 36);
-
-            }
-            end = DateTime.Now;
-            Console.WriteLine((end - start));
-            start = DateTime.Now;
-            foreach (var mok in moks)
-            {
-                Prime.HasNonPrimeNumberMultiThread(mok, 40);
-
-            }
-            end = DateTime.Now;
-            Console.WriteLine((end - start));
+            Console.WriteLine("seq " + (end - start));
+        }
+        static void Main(string[] args)
+        {
+        //BenchmarkRunner.Run<Benchmark>();
+             MainAsync().GetAwaiter().GetResult();
         }
     }
 }

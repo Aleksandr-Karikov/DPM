@@ -10,3 +10,15 @@ C:\Users\Aleksandr\source\repos\Task1\Task1\bin\Debug\net5.0\Task1.pdb
 C:\Users\Aleksandr\source\repos\Task1\Task1\obj\Debug\net5.0\Task1.dll
 C:\Users\Aleksandr\source\repos\Task1\Task1\obj\Debug\net5.0\ref\Task1.dll
 C:\Users\Aleksandr\source\repos\Task1\Task1\obj\Debug\net5.0\Task1.pdb
+C:\Users\Aleksandr\source\repos\DPM\Task1\bin\Debug\net5.0\Task1.deps.json
+C:\Users\Aleksandr\source\repos\DPM\Task1\bin\Debug\net5.0\Task1.dll
+C:\Users\Aleksandr\source\repos\DPM\Task1\bin\Debug\net5.0\ref\Task1.dll
+C:\Users\Aleksandr\source\repos\DPM\Task1\bin\Debug\net5.0\Task1.pdb
+C:\Users\Aleksandr\source\repos\DPM\Task1\obj\Debug\net5.0\Task1.csproj.AssemblyReference.cache
+C:\Users\Aleksandr\source\repos\DPM\Task1\obj\Debug\net5.0\Task1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aleksandr\source\repos\DPM\Task1\obj\Debug\net5.0\Task1.AssemblyInfoInputs.cache
+C:\Users\Aleksandr\source\repos\DPM\Task1\obj\Debug\net5.0\Task1.AssemblyInfo.cs
+C:\Users\Aleksandr\source\repos\DPM\Task1\obj\Debug\net5.0\Task1.csproj.CoreCompileInputs.cache
+C:\Users\Aleksandr\source\repos\DPM\Task1\obj\Debug\net5.0\Task1.dll
+C:\Users\Aleksandr\source\repos\DPM\Task1\obj\Debug\net5.0\ref\Task1.dll
+C:\Users\Aleksandr\source\repos\DPM\Task1\obj\Debug\net5.0\Task1.pdb

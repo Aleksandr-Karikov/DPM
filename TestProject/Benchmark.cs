@@ -25,7 +25,7 @@ namespace TestProject
         {
             foreach (var mok in moks)
             {
-                bool rez = Prime.HasNonPrimeNumberMultiThread(mok,4);
+               // bool rez = Prime.HasNonPrimeNumberMultiThread(mok,4);
                 //Console.WriteLine("MultiThread" + rez);
             }
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -6,6 +7,7 @@ namespace Task1
 {
     public static class Prime
     {
+        static Mutex mutexObj = new Mutex();
         public static bool HasNonPrimeNumberSequential(int[] array)
         {
 
@@ -51,34 +53,36 @@ namespace Task1
             }
             Console.WriteLine();
         }
-        public static bool HasNonPrimeNumberMultiThread(int[] array, byte threadCount = 1)
+        public static async Task<bool> HasNonPrimeNumberMultiThread(int[] array, byte threadCount = 1)
         {
             if (threadCount < 1) throw new Exception("ThreadCount can't be less than 1");
             if (threadCount == 1) return HasNonPrimeNumberSequential(array);
-
-            bool result = false;
-            var step = array.Length / threadCount;
-            var remainder = array.Length % threadCount;
-
             Thread[] threads = new Thread[threadCount];
-            threads[0] = new Thread(() => {
-                if (HasNonPrimeNumberSequential(Helper.SubArray(array, 0, step + remainder)))  result = true;
-            });
-            threads[0].Start();
-
-            for (int i = 1; i < threadCount; i++)
+            Result = false;
+            queue = new ConcurrentQueue<int>(array);
+            for(int i = 0; i < threadCount; i++)
             {
-                var newArray = Helper.SubArray(array, i * step + remainder, step);
-                threads[i] = new Thread(() => {
-                    if (HasNonPrimeNumberSequential(newArray)) result = true;
-                });
+                threads[i] = new Thread(MultyPrime);
                 threads[i].Start();
             }
-            while (IsThreadsOnline(threads))
+
+            for (int i = 0; i < threadCount; i++)
             {
-                
+                threads[i].Join(); 
             }
-            return result;
+            return Result;
+        }
+        static private bool Result;
+        static private ConcurrentQueue<int> queue;
+        static private void MultyPrime()
+        {
+            while (queue.TryDequeue(out int number) && !Result)
+            {
+                if (!IsPrime(number))
+                {
+                    Result = true;
+                }
+            }
         }
         public static bool HasNonPrimeNumberParallel(int[] array)
         {
